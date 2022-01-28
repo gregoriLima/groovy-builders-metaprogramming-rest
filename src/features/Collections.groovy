@@ -1,4 +1,1 @@
 package features
-
-class Collections {
-}
