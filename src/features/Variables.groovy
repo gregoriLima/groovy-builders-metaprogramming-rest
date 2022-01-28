@@ -75,3 +75,34 @@ println 3 + "5.5" // 35.5
 0.step(1,0.1) { num -> print " $num "} println()
 
 println ()
+
+// :: operators behind the scenes
+
+def a = 1
+def b = 2
+
+println a + b // 3
+println a.plus(b) // 3
+// what happens above is that all primitives are child of Number class, that has .plus() method
+
+
+// :: Overriding plus method
+
+class Account{
+    BigDecimal balance
+
+    Account plus(Account other){
+        new Account ( balance: this.balance + other.balance)
+    }
+
+    String toString(){
+        "Account Balance: $balance"
+    }
+}
+
+Account ac1 = new Account(balance:  100)
+Account ac2 = new Account(balance:  300)
+
+println ac1 // 100
+println ac2 // 200
+println ac1 + ac2 // 300
