@@ -47,6 +47,10 @@ operation = ${1+2+3}
 def pathInJava = "C:\\folder1\\folder2"
 println pathInJava // C:\folder1\folder2
 
-//using dollar slashy
+//using dollar slashy, the dollar indicates the start and end of a string
 def pathInGroovy = $/C:\folder1\folder2/$
 println pathInGroovy // C:\folder1\folder2
+
+// if there is no one '/' into string, there isn't no need of using dollar to indicate star and end of string
+def stringUsingSlashyOnly = /this "is" a String with no scape chars \n \t/
+println stringUsingSlashyOnly // this "is" a String with no scape chars \n \t
